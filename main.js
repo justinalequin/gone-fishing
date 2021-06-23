@@ -47,3 +47,42 @@ console.log("===================================================================
 console.log("")
 console.log("")
 
+// Have multiple arrays storing one paramater.
+// Examples:
+//let arrayColor = ['red', 'blue', 'green', 'black', 'purple' ] --- What type of quotes do I need to use?
+//let arrayAdjective = ["scaly", "slimy", "sticky"]
+//let arrayType = [tuna, shark, bass, etc..]
+//arrayColor[Math.random(arrayColor.length)] --- or assign a variable as Math.Random 
+
+
+//Create three functions to randomize intergers for each array type.
+// function getRandomArbitrary(min, max) {
+//  return Math.random() * (max - min) + min;
+//}
+
+let arrColor = ["red ", "blue ", "green ", "yellow ", "purple ", "orange ", ]
+let arrDescription = ["slimy ", "stinky ", "scaly", "spikey ", "sandy "]
+let arrType = ["bass ", "shark ", "whale ", "tuna " , "mahi "]
+let arrWeight = ["3.12", ""]
+let arrValue = []
+let arrTime = ["6:00am. ", "7:00am. ", "8:00am. ", "9:00am. ", "10:00am. ", "11:00am. ", "12:00pm. "]
+let arrCaught = []
+
+while(true){
+    let currentTime = "";
+    for(let i = 0; i < arrTime.length; i++){
+        currentTime = arrTime[i];
+     console.log("The time is " + currentTime +"So far you've caught: " )
+     console.log(arrCaught.length + " fish, " + arrWeight.length + "lbs, $" + arrValue.length )
+
+    } return false
+
+    
+
+
+
+
+
+
+
+}
