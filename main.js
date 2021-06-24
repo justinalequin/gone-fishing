@@ -42,6 +42,10 @@ console.log("")
 console.log("You can fish for six hours (till 12:00pm) and can catch at most 10 lbs of fish.")
 console.log("")
 console.log("")
+console.log("==================================================================================")
+console.log("==================================================================================")
+console.log("")
+console.log("")
 
 
 // Have multiple arrays storing one paramater.
@@ -83,7 +87,9 @@ let currentTime = "";
 let caught = ""
 
 for (let i = 0; i < arrTime.length; i++) { //loop to adjust time. Need to create a pause with a PROMPT and if statements to adjust course.
-    let userInput = prompt("Your action: [c]atch or [r]elease? ")
+        let userInput = prompt("Your action: [c]atch or [r]elease? ")
+
+
     if (userInput !== "c" && userInput !== "r") {
 
         currentTime = arrTime[i - 1]
@@ -99,7 +105,7 @@ for (let i = 0; i < arrTime.length; i++) { //loop to adjust time. Need to create
 
     console.log("The time is " + currentTime + "So far you've caught: ")
 
-    console.log(arrCaught.length + " fish, " + arrWeight.length + "lbs, $" + arrValue.length) //.length used as filler. Can this line be hard coded so that the updated count can. Should I use recursion for sums of weight and value? 
+    console.log(arrCaught.length + " fish, " + arrWeightSum + "lbs, $" + arrValueSum) //.length used as filler. Can this line be hard coded so that the updated count can. Should I use recursion for sums of weight and value? 
 
     let fishName = arrColor[Math.floor(Math.random() * arrColor.length)] + " " + arrDescription[Math.floor(Math.random() * arrDescription.length)] + " " + arrType[Math.floor(Math.random() * arrType.length)] // Type of fish
 
@@ -109,16 +115,16 @@ for (let i = 0; i < arrTime.length; i++) { //loop to adjust time. Need to create
 
     let fishValue = arrValue[Math.floor(Math.random() * arrValue.length)] // Stored variable to log out value
 
-    let fishValueLog ="value: $" + arrValue[Math.floor(Math.random() * arrValue.length)] // Stored variable to log out value
+    let fishValueLog ="value: $" + fishValue // Stored variable to log out value
 
-    caught = fishName + " " + fishWeightLog + " " + fishValue //  This can be stored in caught array
+    caught = fishName + " " + fishWeightLog + " " + fishValueLog //  This can be stored in caught array
     // Running Weight Sum
     arrWeightSum += Number(fishWeight)
-    console.log(arrWeightSum)
-    console.log(typeof arrayWeightSum)
+   // console.log(arrWeightSum)
+    //console.log(typeof arrayWeightSum)
     // Running Value Sum
     arrValueSum += Number(fishValue)
-    console.log(arrValueSum)
+    //console.log(arrValueSum)
 
     // The current fish that you can catch or release
     console.log('On the hook now is: ' + caught);
@@ -135,6 +141,10 @@ for (let i = 0; i < arrTime.length; i++) { //loop to adjust time. Need to create
         arrCaught.push(caught)
     } else if (userInput === "r") {
         console.log("Released")
+    }
+
+    if (arrWeightSum >= 10) {
+        i = 99999999;
     }
 
 
@@ -160,4 +170,5 @@ for (let i = 0; i < arrTime.length; i++) { //loop to adjust time. Need to create
 }
 console.log(arrCaught)
 console.log(arrWeightSum)
-console.log(typeof arrWeightSum)
+console.log(arrValueSum)
+
